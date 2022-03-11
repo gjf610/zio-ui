@@ -1,3 +1,5 @@
+import demoblock from 'vitepress-theme-demoblock'
+
 const sidebar = {
   '/': [
     { text: '快速开始', link: '/' },
@@ -10,14 +12,19 @@ const sidebar = {
     { text: '反馈', },
     { text: '数据录入', },
     { text: '布局', },
-
-
   ]
 }
 
 const config = {
   themeConfig: {
     sidebar
+  },
+  markdown: {
+    config: (md) => {
+      // 这里可以使用 markdown-it 插件，vitepress-theme-demoblock就是基于此开发的
+      const { demoBlockPlugin } = demoblock
+      md.use(demoBlockPlugin)
+    }
   }
 }
 
