@@ -2,7 +2,7 @@ import './tree.scss'
 
 import { defineComponent } from 'vue'
 import { treeProps, TreeProps } from './tree-types'
-
+import IconOpen from './assets/open.svg'
 export default defineComponent({
   name: 'tree',
   props: treeProps,
@@ -12,6 +12,7 @@ export default defineComponent({
     const Indent = () => <span style='display: inline-block;width: 16px'></span>
     const renderNode = (item) => (
       <div style={{ paddingLeft: 20 * (item.level - 1) + 'px' }}>
+        {item.children ? <IconOpen /> : <Indent />}
         {item.label}
       </div>
     )
