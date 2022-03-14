@@ -8,7 +8,13 @@ export default defineComponent({
   props: treeProps,
   setup(props: TreeProps, ctx) {
     console.log(props.data)
-    const renderNode = (item) => <div>{item.label}</div>
+    // 缩进
+    const Indent = () => <span style='display: inline-block;width: 16px'></span>
+    const renderNode = (item) => (
+      <div style={{ paddingLeft: 20 * (item.level - 1) + 'px' }}>
+        {item.label}
+      </div>
+    )
     const renderTree = (treeData) => {
       return treeData.map(item => {
         if (item.children) {
