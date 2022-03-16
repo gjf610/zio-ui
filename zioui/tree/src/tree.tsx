@@ -1,13 +1,12 @@
-import './tree.scss'
+import './tree'
 
 import { defineComponent } from 'vue'
 import { treeProps, TreeProps } from './tree-types'
-import IconOpen from './assets/open.svg'
+import IconOpen from '../../../src/assets/open'
 export default defineComponent({
   name: 'tree',
   props: treeProps,
   setup(props: TreeProps, ctx) {
-    console.log(props.data)
     // 缩进
     const Indent = () => <span style='display: inline-block;width: 16px'></span>
     const renderNode = (item) => (
