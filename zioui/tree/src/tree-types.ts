@@ -1,6 +1,6 @@
 import type { PropType, ExtractPropTypes } from "vue";
 
-type TreeData = Array<{ label: string, children: TreeData }>
+export type TreeData = Array<{ label: string, children: TreeData }>
 
 export const treeProps = {
   data: {
