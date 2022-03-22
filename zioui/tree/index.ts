@@ -7,12 +7,12 @@ Tree.install = function (app: App): void {
 
 export { Tree }
 // 单独引入Tree，为后面按需做基础
-// export default {
-//   title: 'Tree 树',
-//   category: '数据展示',
-//   status: undefined,
-//   install(app: App): void {
-//     app.use(Tree as any)
-//   }
-// }
+export default {
+  title: 'Tree 树',
+  category: '数据展示',
+  status: '20%',
+  install(app: App): void {
+    app.use(Tree as any)
+  }
+}
 

@@ -1,19 +1,19 @@
 import './tree'
 
 import { defineComponent } from 'vue'
-import { treeProps, TreeProps } from './tree-types'
+import { treeProps, TreeProps, TreeData, TreeItem } from './tree-types'
 
 import useToggle from './composables/use-toggle'
 import renderNode from './components/node'
 
 export default defineComponent({
-  name: 'tree',
+  name: 'ZTree',
   props: treeProps,
   emits: [],
   setup(props: TreeProps) {
     const { openedData, toggle } = useToggle(props.data)
-    const renderTree = (treeData) => {
-      return treeData.map(item => renderNode(item, toggle))
+    const renderTree = (treeData: TreeData) => {
+      return treeData.map((item: TreeItem) => renderNode(item, toggle))
     }
     console.log(openedData.value)
     return () => (

@@ -1,8 +1,8 @@
 import IconOpen from './icon-open'
 import IconClose from './icon-close'
 import Indent from './indent'
-
-const renderNode = (item, toggle) => (
+import { TreeItem } from '../tree-types'
+const renderNode = (item: TreeItem, toggle: any) => (
   <div style={{ paddingLeft: `${24 * (item.level - 1)}px` }}>
     {
       item.children

@@ -3,7 +3,12 @@
 ## 基本用法
 
 树的基本用法
+:::demo 渲染一棵基本树
+```vue
+<template>
 <z-tree :data="data"></z-tree>
+
+</template>
 
 <script lang="ts">
 import { defineComponent, ref } from 'vue'
@@ -57,4 +62,6 @@ export default defineComponent({
   }
 })
 </script>
+```
+:::
 

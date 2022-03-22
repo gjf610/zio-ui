@@ -1,9 +1,9 @@
 import { ref } from 'vue'
-import { TreeData } from '../tree-types'
+import { TreeData, TreeItem } from '../tree-types'
 
 export default function useToggle(data: TreeData): any {
-  const openedTree = (tree) => {
-    return tree.reduce((acc, item) => (
+  const openedTree = (tree: any) => {
+    return tree.reduce((acc: TreeItem, item: TreeItem) => (
       item.open
         ? acc.concat(item, openedTree(item.children))
         : acc.concat(item)
@@ -12,7 +12,7 @@ export default function useToggle(data: TreeData): any {
 
   let openedData = ref(openedTree(data))
 
-  const toggle = (item) => {
+  const toggle = (item: TreeItem) => {
     if (!item.children) {
       return
     }
