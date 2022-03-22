@@ -1,1 +1,0 @@
-export default () => <button>按钮</button>
