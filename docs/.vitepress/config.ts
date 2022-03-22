@@ -1,4 +1,4 @@
-import demoblock from 'vitepress-theme-demoblock'
+import { demoBlockPlugin } from 'vitepress-theme-demoblock'
 
 const sidebar = {
   '/': [
@@ -25,8 +25,6 @@ const config = {
   },
   markdown: {
     config: (md) => {
-      // 这里可以使用 markdown-it 插件，vitepress-theme-demoblock就是基于此开发的
-      const { demoBlockPlugin } = demoblock
       md.use(demoBlockPlugin)
     }
   }
