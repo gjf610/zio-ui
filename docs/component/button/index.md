@@ -5,7 +5,12 @@
 
 ```vue
 <template>
-  <z-button></z-button>
+  <z-button @click="onClick">按钮</z-button>
 </template>
+<script lang="ts" setup>
+const onClick = () =>[
+  console.log('hi!')
+]
+</script>
 ```
 :::
