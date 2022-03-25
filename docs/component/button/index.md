@@ -5,7 +5,7 @@
 
 ```vue
 <template>
-  <z-button @click="onClick">按钮</z-button>
+  <z-button @click="onClick" :disabled="true">按钮</z-button>
 </template>
 <script lang="ts" setup>
 const onClick = () =>[
