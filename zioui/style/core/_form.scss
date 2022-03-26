@@ -1,0 +1,595 @@
+@import '../theme/color.scss';
+@import '../theme/shadow';
+@import '../theme/corner';
+@import '../theme/font';
+
+@mixin border-position-radius($position: left) {
+  border-top-#{$position}-radius: 0;
+  border-bottom-#{$position}-radius: 0;
+}
+$border-change-time: 300ms;
+$border-change-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+
+@mixin border-transition {
+  transition: border-color $border-change-time $border-change-function;
+}
+
+.zioui-form-controls input[type='text'],
+.zioui-form-controls input[type='password'],
+[dInput] {
+  width: 100%;
+  height: 28px;
+  font-size: $zioui-font-size;
+
+  &.zioui-input-sm {
+    font-size: $zioui-font-size-sm;
+    height: 26px;
+  }
+
+  &.zioui-input-lg {
+    font-size: $zioui-font-size-lg;
+    height: 46px;
+  }
+}
+
+[dTextArea] {
+  width: 100%;
+}
+
+.zioui-form-controls textarea,
+[dInput],
+[dTextarea] {
+  box-sizing: border-box;
+  padding: 4px 10px;
+  color: $zioui-text;
+  vertical-align: middle;
+  border: 1px solid $zioui-form-control-line;
+  border-radius: $zioui-border-radius;
+  outline: none;
+  background-color: $zioui-base-bg;
+  @include border-transition();
+
+  &:not([disabled]):not(.disabled):not(.zioui-disabled):not(.error):not(.zioui-error) {
+    &:hover {
+      border-color: $zioui-form-control-line-hover;
+    }
+
+    &:focus {
+      border-color: $zioui-form-control-line-active;
+    }
+  }
+
+  &[disabled],
+  &.disabled,
+  &.zioui-disabled {
+    &,
+    &:hover {
+      cursor: not-allowed;
+      background-color: $zioui-disabled-bg;
+      border-color: $zioui-disabled-line;
+      color: $zioui-disabled-text;
+    }
+  }
+}
+
+.zioui-form-controls textarea,
+[dTextarea] {
+  width: 100%;
+}
+
+// input 样式
+.zioui-input-group {
+  position: relative;
+  display: table;
+  border-collapse: separate;
+}
+
+.zioui-input-group-addon {
+  border: 1px solid $zioui-form-control-line;
+  border-radius: $zioui-border-radius;
+  display: table-cell;
+  padding: 0 10px;
+  text-align: center;
+
+  &:last-child {
+    @include border-position-radius(left);
+
+    border-left: 0;
+  }
+
+  &:first-child {
+    @include border-position-radius(right);
+
+    border-right: 0;
+  }
+}
+
+.zioui-input {
+  outline: none;
+  background-color: $zioui-base-bg;
+  border: 1px solid $zioui-form-control-line;
+  border-radius: $zioui-border-radius;
+  padding: 5px 10px;
+  line-height: 16px; // 解决ie中文字不居中，由于height28px，有10px的padding和2px的border，剩余16px，使用其他的会使文字不居中
+  font-size: $zioui-font-size;
+  color: $zioui-text;
+  width: 100%;
+  display: block;
+  cursor: text;
+  height: 28px;
+  @include border-transition;
+
+  &:hover {
+    border-color: $zioui-form-control-line-hover;
+  }
+
+  &:focus {
+    border-color: $zioui-form-control-line-active;
+  }
+
+  &[disabled],
+  &.disabled,
+  &.zioui-disabled {
+    &,
+    &:hover,
+    &:focus,
+    &:hover:focus {
+      border-color: $zioui-disabled-line;
+      color: $zioui-disabled-text;
+      background-color: $zioui-disabled-bg;
+      cursor: not-allowed;
+    }
+  }
+
+  &::placeholder {
+    color: $zioui-placeholder;
+  }
+
+  &.zioui-search-in-dropdown {
+    margin: 0;
+    border: none;
+    padding: 5px 26px 5px 10px;
+    background-color: $zioui-embed-search-bg;
+    color: $zioui-text;
+
+    &:-ms-input-placeholder {
+      color: $zioui-placeholder;
+    }
+
+    &:hover {
+      background-color: $zioui-embed-search-bg-hover;
+    }
+  }
+
+  .zioui-input-group > & {
+    display: table-cell;
+  }
+
+  .zioui-input-group > &:first-child {
+    @include border-position-radius(right);
+  }
+
+  .zioui-input-group > &:last-child {
+    @include border-position-radius(left);
+  }
+
+  .zioui-input-group > &:not(:first-child):not(:last-child) {
+    border-radius: 0;
+  }
+}
+
+.zioui-input-lg {
+  font-size: $zioui-font-size-page-title;
+  line-height: 20px; // 同zioui-input
+  height: 32px;
+}
+
+.zioui-input-sm {
+  font-size: $zioui-font-size;
+  line-height: 14px; // 同zioui-input
+  height: 26px;
+}
+
+// dropdown 公共样式
+.zioui-dropup,
+.zioui-dropdown {
+  position: relative;
+}
+
+.zioui-form-group {
+  position: relative;
+}
+
+.zioui-form-control {
+  color: $zioui-text;
+  background-color: $zioui-base-bg;
+  display: block;
+  border-radius: $zioui-border-radius;
+  outline: 0;
+  @include border-transition;
+
+  &[disabled],
+  &.disabled,
+  &.zioui-disabled {
+    &,
+    &:hover,
+    &:focus {
+      border-color: $zioui-disabled-line;
+
+      &,
+      & > input {
+        color: $zioui-disabled-text;
+        background-color: $zioui-disabled-bg;
+        cursor: not-allowed;
+      }
+    }
+  }
+
+  &:hover {
+    border-color: $zioui-form-control-line-hover;
+  }
+
+  &:focus {
+    border-color: $zioui-form-control-line-active;
+  }
+}
+
+:not(.multiple-label-auto-complete-disabled):not(.zioui-error) {
+  > .zioui-dropdown-origin:not(d-button):not(.icon):not([class^='icon-']):not([disabled]):not(.disabled):not(.zioui-disabled) {
+    &:not(.zioui-dropdown-no-border):not(.zioui-no-border) {
+      border-color: $zioui-form-control-line;
+      @include border-transition;
+
+      &:hover:not(:focus):not(.zioui-dropdown-origin-open) {
+        border-color: $zioui-form-control-line-hover;
+      }
+
+      &:focus,
+      &:focus-within {
+        outline: none;
+        border-color: $zioui-form-control-line-active;
+      }
+
+      &.zioui-dropdown-origin-open {
+        outline: none;
+        border-color: $zioui-connected-overlay-line;
+      }
+    }
+  }
+}
+
+.zioui-dropdown-origin:not(d-button):not(.icon):not([class^='icon-']) {
+  min-height: 28px;
+
+  &:not([disabled]):not(.disabled):not(.zioui-disabled) {
+    color: $zioui-text;
+  }
+
+  & > .zioui-input,
+  & > .zioui-form-control {
+    height: 26px;
+  }
+
+  &:not(.zioui-select-underlined-border):not(.zioui-dropdown-no-border):not(.zioui-no-border) {
+    border-radius: $zioui-border-radius;
+    border-width: 1px;
+    border-style: solid;
+  }
+
+  .zioui-form-control,
+  .zioui-form-control:hover,
+  .zioui-form-control:focus,
+  .zioui-form-control:focus:hover,
+  .zioui-input-group-addon,
+  .zioui-input-group-addon:hover,
+  .zioui-input-group-addon:focus,
+  > .zioui-dropdown-default,
+  > .zioui-dropdown-default:hover,
+  > .zioui-dropdown-default:active,
+  > .zioui-dropdown-default:focus {
+    border-color: transparent;
+  }
+
+  &[disabled],
+  &.disabled,
+  &.zioui-disabled {
+    .zioui-form-control,
+    .zioui-form-control:hover,
+    .zioui-form-control:focus,
+    .zioui-form-control:focus:hover,
+    .zioui-input-group-addon,
+    > .zioui-dropdown-default,
+    > .zioui-dropdown-default:hover,
+    > .zioui-dropdown-default:active,
+    > .zioui-dropdown-default:focus {
+      background-color: $zioui-disabled-bg;
+    }
+  }
+}
+
+// css选择器不可合并，否则css解析器总是会失败
+input::-moz-placeholder {
+  color: $zioui-placeholder;
+}
+
+input:-ms-input-placeholder {
+  color: $zioui-placeholder;
+}
+
+input::-webkit-input-placeholder {
+  color: $zioui-placeholder;
+}
+
+/* status style start */
+
+/* border color and background */
+[dInput]:not([disabled]):not(.disabled):not(.zioui-disabled).error,
+[dTextarea]:not([disabled]):not(.disabled):not(.zioui-disabled).error,
+[dInput]:not([disabled]):not(.disabled):not(.zioui-disabled).zioui-error,
+[dTextarea]:not([disabled]):not(.disabled):not(.zioui-disabled).zioui-error {
+  border-color: $zioui-danger-line;
+  background-color: $zioui-danger-bg;
+}
+
+[dDatePicker]:not([disabled]):not(.disabled):not(.zioui-disabled).zioui-error {
+  background-color: $zioui-danger-bg;
+}
+
+d-select:not([disabled]):not(.disabled):not(.zioui-disabled):not(.multiple-label-auto-complete-disabled).zioui-error {
+  div.zioui-dropdown-origin.zioui-dropup,
+  div.zioui-dropdown-origin.zioui-dropdown {
+    border-color: $zioui-danger-line;
+
+    .zioui-form-group .zioui-input.zioui-form-control.zioui-select-input:not(.zioui-select-search),
+    .zioui-form-group .zioui-select-input:not(.zioui-select-search) + .zioui-form-control-feedback {
+      background-color: $zioui-danger-bg;
+    }
+  }
+}
+
+d-editable-select:not([disabled]):not(.disabled):not(.zioui-disabled).zioui-error {
+  .zioui-form-group:not(.multiple-label-auto-complete-disabled) {
+    input.zioui-form-control.zioui-dropdown-origin {
+      border-color: $zioui-danger-line;
+      background-color: $zioui-danger-bg; /* TODO: open时，下边框颜色 */
+    }
+  }
+}
+
+d-datepicker-pro:not([disabled]):not(.disabled):not(.zioui-disabled).zioui-error {
+  .zioui-datepicker-pro-wrapper:not([disabled]):not(.disabled):not(.zioui-disabled) .zioui-dropdown-toggle .zioui-single-picker {
+    border-color: $zioui-danger-line;
+    background-color: $zioui-danger-bg;
+
+    .zioui-input:not(.zioui-disabled) {
+      background-color: $zioui-danger-bg;
+    }
+  }
+}
+
+d-range-datepicker-pro:not([disabled]):not(.disabled):not(.zioui-disabled).zioui-error {
+  .zioui-datepicker-pro-wrapper:not([disabled]):not(.disabled):not(.zioui-disabled) .zioui-dropdown-toggle .zioui-range-picker {
+    border-color: $zioui-danger-line;
+    background-color: $zioui-danger-bg;
+
+    .zioui-input:not(.zioui-disabled) {
+      background-color: $zioui-danger-bg;
+    }
+  }
+}
+
+d-input-number:not([disabled]):not(.disabled):not(.zioui-disabled).zioui-error {
+  .input-box:not(:disabled) {
+    border-color: $zioui-danger-line;
+    background-color: $zioui-danger-bg;
+  }
+}
+
+d-multi-auto-complete:not([disabled]):not(.disabled):not(.zioui-disabled).zioui-error {
+  :not(.multiple-label-auto-complete-disabled) {
+    &.multiple-label-auto-complete.multiple-label-auto-complete-border ul.zioui-dropdown-origin {
+      border-color: $zioui-danger-line;
+      background-color: $zioui-danger-bg;
+    }
+
+    input[dAutoComplete] {
+      background-color: $zioui-danger-bg;
+    }
+  }
+}
+
+d-tags-input:not([disabled]):not(.disabled):not(.zioui-disabled).zioui-error {
+  :not(.multiple-label-auto-complete-disabled) {
+    div.zioui-tags.zioui-form-control {
+      border-color: $zioui-danger-line;
+      background-color: $zioui-danger-bg;
+    }
+
+    input.zioui-input {
+      background-color: $zioui-danger-bg;
+    }
+  }
+}
+
+d-tree-select:not([disabled]):not(.disabled):not(.zioui-disabled).zioui-error {
+  :not(.multiple-label-auto-complete-disabled) {
+    & > div.zioui-select-input.zioui-dropdown-origin.zioui-tree-select-input {
+      border-color: $zioui-danger-line;
+      background-color: $zioui-danger-bg; /* TODO: open时，下边框颜色 */
+    }
+  }
+}
+
+d-search:not([disabled]):not(.disabled):not(.zioui-disabled).zioui-error {
+  input.zioui-input {
+    border-color: $zioui-danger-line;
+    background-color: $zioui-danger-bg;
+  }
+}
+
+/* border color only */
+d-editor-md:not([disabled]):not(.disabled):not(.zioui-disabled).zioui-error {
+  border-color: $zioui-danger-line;
+}
+
+d-editor:not([disabled]):not(.disabled):not(.zioui-disabled).zioui-error {
+  .ql-toolbar,
+  .ql-container {
+    border-color: $zioui-danger-line;
+  }
+}
+
+d-form-control {
+  d-search {
+    width: 100%;
+  }
+}
+
+.zioui-form-controls.zioui-form-control-has-suffix {
+  [dInput],
+  [dTextArea] {
+    padding-right: 28px;
+  }
+}
+
+.zioui-form-controls.zioui-form-control-has-suffix.zioui-form-control-has-feedback {
+  [dInput],
+  [dTextArea] {
+    padding-right: 56px;
+  }
+}
+
+.zioui-form-controls.zioui-form-control-has-feedback {
+  [dInput],
+  [dTextarea] {
+    padding-right: 28px;
+  }
+
+  d-search {
+    .zioui-search {
+      .zioui-search-icon {
+        right: 24px;
+      }
+
+      .zioui-search-line {
+        right: 60px;
+      }
+
+      .zioui-search-clear {
+        right: 60px;
+      }
+
+      .zioui-input.zioui-icon-left {
+        padding-right: 30px;
+      }
+
+      .zioui-input {
+        padding-right: 54px;
+      }
+
+      .zioui-input.zioui-clear-exit {
+        padding-right: 84px;
+      }
+
+      .zioui-search-line.zioui-search-line-sm {
+        right: 60px;
+      }
+
+      .zioui-search-clear.zioui-search-clear-sm {
+        right: 60px;
+      }
+
+      .zioui-input.zioui-input-sm {
+        padding-right: 54px;
+      }
+
+      .zioui-input.zioui-clear-exit.zioui-input-sm {
+        padding-right: 84px;
+      }
+
+      .zioui-search-line.zioui-search-line-lg {
+        right: 70px;
+      }
+
+      .zioui-search-clear.zioui-search-clear-lg {
+        right: 70px;
+      }
+
+      .zioui-input.zioui-input-lg {
+        padding-right: 60px;
+      }
+
+      .zioui-input.zioui-clear-exit.zioui-input-lg {
+        padding-right: 95px;
+      }
+    }
+  }
+
+  d-select {
+    .zioui-form-group {
+      .zioui-select-input {
+        padding-right: 48px;
+      }
+
+      .zioui-form-control-feedback {
+        right: 24px;
+      }
+    }
+  }
+
+  d-tree-select {
+    vertical-align: middle;
+
+    .zioui-tree-select .zioui-select-input.zioui-tree-select-input {
+      padding-right: 52px;
+    }
+
+    .zioui-tree-select .zioui-select-chevron-icon {
+      right: 34px;
+    }
+  }
+
+  d-input-number {
+    width: 100%;
+
+    .input-control-buttons {
+      right: 32px;
+    }
+
+    .input-box {
+      padding-right: 32px;
+    }
+
+    &:hover .input-box:not(.disabled) {
+      padding-right: 58px;
+    }
+  }
+
+  d-tags-input {
+    .zioui-tags {
+      padding-right: 28px;
+    }
+  }
+
+  d-multi-auto-complete {
+    .multiple-label-auto-complete ul {
+      padding-right: 28px;
+    }
+  }
+
+  d-editable-select {
+    .zioui-form-group.zioui-has-feedback > .zioui-form-control-feedback {
+      right: 24px;
+    }
+
+    & > div > .zioui-form-control {
+      padding-right: 48px;
+    }
+  }
+
+  [dDatePicker].zioui-form-control {
+    padding-right: 32px;
+  }
+}
+
+/* status style end */

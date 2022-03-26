@@ -1,0 +1,288 @@
+@import '../../style/mixins/index';
+@import '../../style/theme/color';
+@import '../../style/theme/variables';
+@import '../../style/theme/font';
+@import '../../style/theme/corner';
+
+.zioui-btn {
+  padding: 0 20px;
+  font-size: $zioui-font-size-md;
+  height: 28px;
+  line-height: $zioui-line-height-base;
+  border: none;
+  border-radius: $zioui-border-radius;
+  border-width: 1px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  &+&{
+    margin-left: 8px;
+  }
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+  }
+
+  &-solid {
+    color: $zioui-light-text;
+    min-width: 64px;
+
+    &-secondary {
+      color: $zioui-text;
+      background-color: $zioui-dividing-line;
+
+      &:hover {
+        opacity: 0.8;
+      }
+
+      &:focus {
+        opacity: 0.8;
+      }
+
+      &:active {
+        opacity: 0.8;
+      }
+
+      &:disabled {
+        opacity: 0.8;
+      }
+    }
+
+    &-primary {
+      background-color: $zioui-primary;
+
+      &:hover {
+        background-color: $zioui-primary-hover;
+      }
+
+      &:focus {
+        background-color: $zioui-primary-hover;
+      }
+
+      &:active {
+        background-color: $zioui-primary-active;
+      }
+
+      &:disabled {
+        color: $zioui-light-text;
+        background: $zioui-primary-disabled;
+        border: none;
+      }
+    }
+
+    &-danger {
+      background-color: $zioui-contrast;
+
+      &:hover {
+        background-color: $zioui-contrast-hover;
+      }
+
+      &:focus {
+        background-color: $zioui-contrast-hover;
+      }
+
+      &:active {
+        background-color: $zioui-contrast-active;
+      }
+
+      &:disabled {
+        background-color: $zioui-contrast-disabled;
+      }
+    }
+  }
+
+  &-outline {
+    background-color: $zioui-block;
+    border-style: solid;
+
+    &-secondary {
+      color: $zioui-text;
+      border-color: $zioui-line;
+
+      &:hover {
+        color: $zioui-brand-active;
+        border-color: $zioui-form-control-line-active;
+      }
+
+      &:focus {
+        color: $zioui-brand-active;
+        border-color: $zioui-form-control-line-active;
+      }
+
+      &:active {
+        color: $zioui-brand-active;
+        border-color: $zioui-form-control-line-active;
+      }
+
+      &:disabled {
+        color: $zioui-disabled-text;
+        border-color: $zioui-disabled-line;
+        background-color: $zioui-disabled-bg;
+      }
+    }
+
+    &-primary {
+      color: $zioui-brand-active;
+      border-color: $zioui-form-control-line-active;
+
+      &:hover {
+        color: $zioui-brand-active-focus;
+        border-color: $zioui-form-control-line-active-hover;
+      }
+
+      &:focus {
+        color: $zioui-brand-active-focus;
+        border-color: $zioui-form-control-line-active-hover;
+      }
+
+      &:active {
+        color: $zioui-brand-active-focus;
+        border-color: $zioui-form-control-line-active-hover;
+      }
+
+      &:disabled {
+        opacity: 0.8;
+      }
+    }
+
+    &-danger {
+      color: $zioui-contrast;
+      border-color: $zioui-contrast;
+
+      &:hover,
+      &:focus,
+      &:active,
+      &:disabled {
+        opacity: 0.8;
+      }
+    }
+  }
+
+  &-text {
+    padding: 0;
+
+    &-secondary {
+      color: $zioui-text;
+
+      &:hover {
+        color: $zioui-list-item-hover-text;
+      }
+
+      &:focus {
+        color: $zioui-list-item-hover-text;
+      }
+
+      &:active {
+        color: $zioui-list-item-hover-text;
+      }
+
+      &:disabled {
+        color: $zioui-disabled-text;
+      }
+    }
+
+    &-primary {
+      color: $zioui-brand-active;
+
+      &:hover {
+        color: $zioui-brand-active-focus;
+      }
+
+      &:focus {
+        color: $zioui-brand-active-focus;
+      }
+
+      &:active {
+        color: $zioui-brand-active-focus;
+      }
+
+      &:disabled {
+        opacity: 0.8;
+      }
+    }
+
+    &-danger {
+      color: $zioui-contrast;
+
+      &:hover,
+      &:focus,
+      &:active,
+      &:disabled {
+        opacity: 0.8;
+      }
+    }
+  }
+
+  &-xs {
+    padding: 0 4px;
+    height: 24px;
+    font-size: $zioui-font-size-sm;
+    min-width: 48px;
+  }
+
+  &-sm {
+    padding: 0 16px;
+    height: 24px;
+    font-size: $zioui-font-size-sm;
+    min-width: 56px;
+  }
+
+  &-lg {
+    padding: 0 24px;
+    height: 32px;
+    font-size: $zioui-font-size-lg;
+    min-width: 72px;
+  }
+
+  &.zioui-btn-icon {
+    &:hover,
+    &:focus {
+      border: 1px solid $zioui-list-item-hover-bg;
+      background-color: $zioui-list-item-hover-bg;
+    }
+
+    &:disabled {
+      background-color: $zioui-disabled-bg;
+    }
+  }
+
+  &:not(:disabled) {
+    &.zioui-btn-text {
+      &.zioui-btn-icon-wrap {
+        color: $zioui-text;
+
+        .zioui-icon-fix {
+          color: $zioui-text-weak;
+        }
+
+        &:hover {
+          color: $zioui-list-item-hover-text;
+
+          .zioui-icon-fix {
+            color: $zioui-icon-fill-active;
+          }
+        }
+      }
+    }
+  }
+  &-loading{
+    width: 14px;
+    height: 14px;
+    display: inline-block;
+    line-height: 14px;
+    margin-right: 4px;
+    border-radius: 8px; 
+    border-color: $zioui-brand $zioui-brand $zioui-brand transparent;
+    border-style: solid;
+    border-width: 2px;
+    animation: vv-spin 1s infinite linear;
+  }
+}
+@keyframes vv-spin {
+  0%{transform: rotate(0deg)} 
+  100%{transform: rotate(360deg)} 
+}

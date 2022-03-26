@@ -1,0 +1,93 @@
+.over-flow-ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.clear-fix {
+  zoom: 1;
+}
+
+.clear-fix::after {
+  content: '';
+  display: block;
+  width: 0;
+  clear: both;
+}
+
+.zioui-close {
+  float: right;
+  font-weight: bold;
+  line-height: 20px;
+  height: 20px;
+  color: $zioui-text;
+  text-shadow: 0 1px 0 #ffffff;
+  filter: alpha(opacity=20);
+  opacity: 0.2;
+
+  &:hover,
+  &:focus {
+    color: $zioui-text;
+    text-decoration: none;
+    cursor: pointer;
+    filter: alpha(opacity=50);
+    opacity: 0.5;
+  }
+}
+
+button.zioui-close {
+  -webkit-appearance: none;
+  padding: 0;
+  cursor: pointer;
+  background: transparent;
+  border: 0;
+}
+
+a:hover,
+a:focus {
+  color: $zioui-link;
+}
+
+a:active,
+a:hover {
+  outline: 0;
+}
+
+.zioui-link {
+  color: $zioui-link;
+
+  &:hover {
+    color: $zioui-link-active;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+}
+
+.zioui-link-light {
+  color: $zioui-link-light;
+
+  &:hover {
+    color: $zioui-link-light-active;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+}
+
+.zioui-disabled {
+  &,
+  &.zioui-input-group-addon {
+    border-color: $zioui-disabled-line;
+  }
+
+  &,
+  & > input,
+  & > .zioui-input-group-addon {
+    color: $zioui-disabled-text;
+    background-color: $zioui-disabled-bg;
+    cursor: not-allowed;
+  }
+}
+
+.zioui-body-scrollblock {
+  width: 100%;
+}

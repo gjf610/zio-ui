@@ -1,0 +1,21 @@
+// 字号大小变量
+
+$zioui-font-size: var(--zioui-font-size, 12px); //正文、卡片副标题
+$zioui-font-size-card-title: var(--zioui-font-size-card-title, 14px); //卡片标题
+$zioui-font-size-page-title: var(--zioui-font-size-page-title, 16px); //页面标题
+$zioui-font-size-modal-title: var(--zioui-font-size-modal-title, 18px); //弹窗标题、数字
+$zioui-font-size-price: var(--zioui-font-size-price, 20px); //购买价格
+$zioui-font-size-data-overview: var(--zioui-font-size-data-overview, 24px); //数据总览
+
+$zioui-font-size-icon: var(--zioui-font-size-icon, 16px);     //图标大小
+$zioui-font-size-sm: var(--zioui-font-size-sm, 12px);  //当组件size为'sm'时使用此字号大小
+$zioui-font-size-md: var(--zioui-font-size-md, 12px);  //当组件size为''时使用此字号大小
+$zioui-font-size-lg: var(--zioui-font-size-lg, 14px);  //当组件size为'lg'时使用此字号大小
+
+$zioui-font-title-weight: bold; //标题文字粗细
+$zioui-font-content-weight: normal; //内容文字粗细
+$zioui-line-height-base: 1.5; //规范行高
+
+$font-title-weight: bold;
+$font-content-weight: normal;
+$line-height-base: 1.5;

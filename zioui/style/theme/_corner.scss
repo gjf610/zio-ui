@@ -1,0 +1,5 @@
+//圆角变量
+
+$zioui-border-radius: var(--zioui-border-radius, 2px); //一般圆角
+$zioui-border-radius-feedback: var(--zioui-border-radius-feedback, 4px); //反馈类圆角
+$zioui-border-radius-card: var(--zioui-border-radius-card, 6px); //卡片圆角

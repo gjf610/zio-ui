@@ -1,0 +1,219 @@
+@import '../theme/color.scss';
+
+.zioui-dropdown {
+  position: relative;
+  vertical-align: middle;
+
+  .zioui-dropdown-toggle {
+    box-shadow: none;
+    outline: none;
+  }
+
+  .zioui-dropdown-toggle.zioui-dropdown-default {
+    line-height: 1.5;
+    padding: 4px 10px;
+    border-radius: 2px;
+    text-align: center;
+    cursor: pointer;
+    outline: 0;
+    border-style: solid;
+    border-width: 1px;
+    display: flex;
+    align-items: center;
+
+    &:not(.zioui-dropdown-item) {
+      display: inline-flex !important;
+    }
+  }
+
+  .zioui-caret {
+    display: inline-block;
+    margin-left: 2px;
+    vertical-align: middle;
+    border-top: 4px dashed;
+    border-right: 4px solid transparent;
+    border-left: 4px solid transparent;
+  }
+
+  &.zioui-dropdown-open .zioui-dropdown-toggle span.icon-chevron-down {
+    transform: rotate(180deg);
+  }
+}
+
+.zioui-dropdown-menu {
+  position: absolute;
+  float: left;
+  top: calc(100% - 1px);
+  left: 0;
+  z-index: 1000;
+  min-width: calc(min(100%, 102px));
+  margin: 4px 0;
+  padding-bottom: 5px;
+  background-clip: padding-box;
+  border-radius: 2px;
+  list-style: none;
+  background-color: $zioui-connected-overlay-bg;
+  box-shadow: 0 2px 5px 0 $zioui-shadow;
+  outline: none;
+
+  &.zioui-dropdown-overlay,
+  &.zioui-dropdown-overlay.popper-container {
+    border: 1px solid $zioui-brand;
+  }
+
+  &.zioui-dropdown-overlay.popper-container {
+    margin-top: -1px;
+    margin-bottom: -1px;
+  }
+
+  // .open > & {
+  //   display: block;
+  // }
+  > li {
+    position: relative;
+
+    > a {
+      height: 36px;
+      padding: 0 10px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  li > input {
+    margin: 0 10px;
+  }
+
+  > .disabled > a {
+    color: $zioui-disabled-text;
+    cursor: not-allowed;
+
+    &:hover,
+    &:focus {
+      cursor: not-allowed;
+    }
+  }
+
+  .zioui-dropdown-item:not(.disabled) {
+    &:hover:not(:active) {
+      background-color: $zioui-list-item-hover-bg;
+      color: $zioui-list-item-hover-text;
+    }
+
+    &:active:hover {
+      background-color: $zioui-list-item-active-bg;
+      color: $zioui-list-item-active-text;
+    }
+
+    &.zioui-dropdown-bg {
+      //箭头选中
+      background-color: $zioui-list-item-hover-bg;
+      color: $zioui-list-item-hover-text;
+    }
+
+    &.active {
+      color: $zioui-list-item-active-text;
+      background-color: $zioui-list-item-active-bg;
+    }
+  }
+}
+
+.zioui-form-group.zioui-has-feedback {
+  & > .zioui-form-control-feedback {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 2;
+    display: block;
+    width: 28px;
+    height: 28px;
+    line-height: 28px;
+    text-align: center;
+    pointer-events: none;
+
+    &:hover {
+      position: absolute;
+    }
+
+    .zioui-caret {
+      display: inline-block;
+      margin-left: 2px;
+      vertical-align: middle;
+      border-top: 4px solid;
+      border-right: 4px solid transparent;
+      border-left: 4px solid transparent;
+    }
+  }
+}
+
+.form-group.has-feedback[tabindex] {
+  outline: 0;
+}
+
+.zioui-dropdown-no-border {
+  min-height: 28px;
+  min-width: calc(min(100%, 102px));
+  line-height: 1.5;
+  padding: 4px 10px;
+  border-radius: 2px;
+  text-align: center;
+  outline: 0;
+  background-image: none;
+  text-decoration: none;
+  cursor: pointer;
+  background-color: $zioui-connected-overlay-bg;
+  color: $zioui-text;
+  display: flex;
+  align-items: center;
+  box-shadow: none;
+  border: none;
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+  }
+
+  &:active:hover,
+  &:focus {
+    color: $zioui-brand-active;
+  }
+}
+
+.zioui-dropdown {
+  .zioui-dropdown-default {
+    background-color: $zioui-base-bg;
+    color: $zioui-text;
+    border-color: $zioui-form-control-line;
+
+    &:active,
+    &:focus,
+    &:hover {
+      border-color: $zioui-form-control-line-hover;
+    }
+  }
+
+  .zioui-dropdown-menu {
+    background: $zioui-connected-overlay-bg;
+    box-shadow: 0 2px 5px 0 $zioui-shadow;
+
+    > li > a:not(.disabled) {
+      color: $zioui-text;
+
+      &:hover,
+      &:focus {
+        background-color: $zioui-list-item-hover-bg;
+      }
+    }
+
+    > .disabled > a {
+      color: $zioui-disabled-text;
+      cursor: not-allowed;
+
+      &:hover,
+      &:focus {
+        background-color: transparent;
+      }
+    }
+  }
+}

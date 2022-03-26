@@ -1,0 +1,43 @@
+@import './color';
+@import '../core/font';
+@import '../theme/font';
+
+$text-color: $zioui-text;
+$font-family: 'HuaweiFont', helvetica, arial, 'PingFang', 'Microsoft YaHei', 'Hiragino Sans GB', 'Microsoft JhengHei', sans-serif;
+$font-variant-base: tabular-nums;
+$body-background: $zioui-base-bg;
+$zioui-font-size: $zioui-font-size; // 12px
+// $zioui-font-size-modal-title: $zioui-font-size-modal-title; // 18px
+$font-size-page-title: $zioui-font-size-page-title; // 16px
+// $zioui-font-size-card-title: $zioui-font-size-card-title; // 14px
+.zioui-font-size-base {
+  font-size: $zioui-font-size; // 12px
+}
+
+.zioui-font-base {
+  @include font-content(); // 12px normal 1.5
+}
+
+.zioui-font-size-modal-title {
+  font-size: $zioui-font-size-modal-title; // 18px
+}
+
+.zioui-font-modal-title {
+  @include font-title($zioui-font-size-modal-title); // 18px bold 1.5
+}
+
+.zioui-font-size-page-title {
+  font-size: $zioui-font-size-page-title; // 16px
+}
+
+.zioui-font-page-title {
+  @include font-title(); // 16px bold 1.5
+}
+
+.zioui-font-size-secondary-title {
+  font-size: $zioui-font-size-card-title; // 14px
+}
+
+.zioui-font-secondary-title {
+  @include font-title($zioui-font-size-card-title); // 14px bold 1.5
+}

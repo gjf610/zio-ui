@@ -1,0 +1,29 @@
+$zioui-animation-duration-slow: var(--zioui-animation-duration-slow, 300ms);
+$zioui-animation-duration-base: var(--zioui-animation-duration-base, 200ms);
+$zioui-animation-duration-fast: var(--zioui-animation-duration-fast, 100ms);
+
+$zioui-animation-ease-in: var(
+  --zioui-animation-ease-in,
+  cubic-bezier(0.5, 0, 0.84, 0.25)
+);
+$zioui-animation-ease-out: var(
+  --zioui-animation-ease-out,
+  cubic-bezier(0.16, 0.75, 0.5, 1)
+);
+$zioui-animation-ease-in-out: var(
+  --zioui-animation-ease-in-out,
+  cubic-bezier(0.5, 0.05, 0.5, 0.95)
+);
+$zioui-animation-ease-in-smooth: var(
+  --zioui-animation-ease-in-smooth,
+  cubic-bezier(0.645, 0.045, 0.355, 1)
+);
+// ng库中中把 $zioui-animation-ease-in-smooth 重命名为了 $zioui-animation-ease-in-out-smooth
+$zioui-animation-ease-in-out-smooth: var(
+  --zioui-animation-ease-in-out-smooth,
+  cubic-bezier(0.645, 0.045, 0.355, 1)
+);
+$zioui-animation-linear: var(
+  --zioui-animation-linear,
+  cubic-bezier(0, 0, 1, 1)
+);
