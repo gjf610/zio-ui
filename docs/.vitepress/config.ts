@@ -10,8 +10,9 @@ const sidebar = {
     },
     { text: '导航', },
     { text: '反馈', },
+    { text: '数据录入' },
     {
-      text: '数据录入', children: [
+      text: '数据展示', children: [
         { text: 'Tree 树', link: '/component/tree/' },
       ]
     },
