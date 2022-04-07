@@ -13,9 +13,6 @@
     "docs:build": "vitepress build docs",
     "docs:serve": "vitepress serve docs",
     "register:components": "vitepress-rc",
-    "cli:dev": "esbuild --bundle ./zioui-cli/index.js --format=cjs --platform=node --outdir=./lib --watch",
-    "cli:build": "esbuild --bundle ./zioui-cli/index.js --format=cjs --platform=node --outdir=./lib",
-    "cli": "node ./lib/index.js create",
     "build:components": "node ./zioui-cli/commands/build.js",
     "build:lib": "yarn build:components && cp package.json build && cp README.md build"
   },
@@ -38,6 +35,7 @@
     "inquirer": "^8.2.2",
     "jest": "^27.5.1",
     "kolorist": "^1.5.1",
+    "lerna": "^4.0.0",
     "sass": "^1.49.9",
     "typescript": "^4.5.4",
     "vite": "^2.8.0",
@@ -47,5 +45,8 @@
     "vue-template-compiler": "^2.6.14",
     "vue-tsc": "^0.29.8"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "workspaces": [
+    "packages/*"
+  ]
 }

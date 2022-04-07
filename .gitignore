@@ -1,24 +1,18 @@
-# Logs
-logs
-*.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
-lerna-debug.log*
-
 node_modules
+.DS_Store
 dist
 dist-ssr
+build
+types
 *.local
-
-# Editor directories and files
-.vscode/*
-!.vscode/extensions.json
+package-lock.json
+yarn.lock
+yarn-error.log
+.history
+.vscode
 .idea
-.DS_Store
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
+packages/zioui-vue/zioui/vue-zioui.ts
+packages/zioui-vue/zioui/theme/theme.scss
+packages/zioui-vue/docs/.vitepress/config/sidebar.ts
+packages/zioui-vue/docs/.vitepress/config/enSidebar.ts
+.pnpm-debug.log
