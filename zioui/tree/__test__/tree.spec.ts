@@ -58,7 +58,7 @@ describe('tree组件', () => {
       }
     })
     expect(wrapper.classes()).toContain('z-tree')
-    expect(wrapper.element.childElementCount).toBe(14)
+    expect(wrapper.element.childElementCount).toBe(9)
 
   })
 })
