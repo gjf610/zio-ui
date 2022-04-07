@@ -1,5 +1,5 @@
 import { createApp } from 'vue'
 import App from './App.vue'
-import MiniVueZioUI from '../build'
+import Tree from '../build/tree'
 
-createApp(App).use(MiniVueZioUI).mount('#app')
+createApp(App).use(Tree).mount('#app')
