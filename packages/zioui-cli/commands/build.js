@@ -5,8 +5,8 @@ const { defineConfig, build } = require('vite')
 const vue = require('@vitejs/plugin-vue')
 const vueJsx = require('@vitejs/plugin-vue-jsx')
 
-const entryDir = path.resolve(__dirname, '../../zioui')
-const outputDir = path.resolve(__dirname, '../../build')
+const entryDir = path.resolve(__dirname, '../../zioui-vue/zioui')
+const outputDir = path.resolve(__dirname, '../../../build')
 
 const baseConfig = defineConfig({
   configFile: false,

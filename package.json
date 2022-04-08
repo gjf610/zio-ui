@@ -5,19 +5,9 @@
   "main": "vue-zioui.umd.js",
   "module": "vue-zioui.es.js",
   "scripts": {
-    "dev": "vite",
-    "build": "vue-tsc --noEmit && vite build",
-    "preview": "vite preview",
-    "test": "jest",
-    "docs:dev": "vitepress dev docs",
-    "docs:build": "vitepress build docs",
-    "docs:serve": "vitepress serve docs",
-    "register:components": "vitepress-rc",
-    "cli:dev": "esbuild --bundle ./zioui-cli/index.js --format=cjs --platform=node --outdir=./lib --watch",
-    "cli:build": "esbuild --bundle ./zioui-cli/index.js --format=cjs --platform=node --outdir=./lib",
-    "cli": "node ./lib/index.js create",
-    "build:components": "node ./zioui-cli/commands/build.js",
-    "build:lib": "yarn build:components && cp package.json build && cp README.md build"
+    "dev": "lerna exec --scope zio-ui yarn dev",
+    "build": "lerna exec --scope zioui-cli yarn build",
+    "build:lib": "lerna exec --scope zioui-cli yarn build:lib"
   },
   "dependencies": {
     "vue": "^3.2.25"

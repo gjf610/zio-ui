@@ -1,20 +1,21 @@
 {
   "name": "zio-ui",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "main": "vue-zioui.umd.js",
   "module": "vue-zioui.es.js",
+  "files": [
+    "build"
+  ],
   "scripts": {
-    "dev": "vite",
+    "dev": "vitepress dev docs",
     "build": "vue-tsc --noEmit && vite build",
     "preview": "vite preview",
     "test": "jest",
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
     "docs:serve": "vitepress serve docs",
-    "register:components": "vitepress-rc",
-    "build:components": "node ./zioui-cli/commands/build.js",
-    "build:lib": "yarn build:components && cp package.json build && cp README.md build"
+    "register:components": "vitepress-rc"
   },
   "dependencies": {
     "vue": "^3.2.25"
