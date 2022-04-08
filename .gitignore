@@ -1,6 +1,5 @@
 node_modules
 .DS_Store
-dist
 dist-ssr
 build
 types
@@ -12,7 +11,4 @@ yarn-error.log
 .vscode
 .idea
 packages/zioui-vue/zioui/vue-zioui.ts
-packages/zioui-vue/zioui/theme/theme.scss
-packages/zioui-vue/docs/.vitepress/config/sidebar.ts
-packages/zioui-vue/docs/.vitepress/config/enSidebar.ts
 .pnpm-debug.log

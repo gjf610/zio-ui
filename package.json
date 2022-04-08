@@ -7,7 +7,9 @@
   "scripts": {
     "dev": "lerna exec --scope zio-ui yarn dev",
     "build": "lerna exec --scope zioui-cli yarn build",
-    "build:lib": "lerna exec --scope zioui-cli yarn build:lib"
+    "build:lib": "lerna exec --scope zioui-cli yarn build:lib",
+    "docs:build": "lerna exec --scope zio-ui yarn docs:build",
+    "docs:serve": "lerna exec --scope zio-ui yarn docs:serve"
   },
   "dependencies": {
     "vue": "^3.2.25"
