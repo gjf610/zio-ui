@@ -1,12 +1,15 @@
 import type { App } from 'vue'
 import TreeInstall, { Tree } from './tree'
+import ButtonInstall, { Button } from './button'
 
 const installs = [
-  TreeInstall
+  TreeInstall,
+  ButtonInstall
 ]
 
 export {
-  Tree
+  Tree,
+  Button
 }
 
 export default {
