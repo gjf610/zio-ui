@@ -55,11 +55,11 @@ $zioui-disabled-text: var(--zioui-disabled-text, #adb0b8);
     .toggle-disabled {
       cursor: not-allowed;
 
-      svg.svg-icon rect {
+      svg rect {
         stroke: $zioui-disabled-text;
       }
 
-      svg.svg-icon path {
+      svg path {
         fill: $zioui-disabled-text;
       }
     }

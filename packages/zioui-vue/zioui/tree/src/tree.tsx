@@ -28,9 +28,13 @@ export default defineComponent({
             <div class="zioui-tree-node__content--value-wrapper">
               {
                 item.children
-                  ? item.open
-                    ? <IconOpen class="mr-xs" onClick={() => toggle(item)} /> // 给节点绑定点击事件
-                    : <IconClose class="mr-xs" onClick={() => toggle(item)} /> // 给节点绑定点击事件
+                  ? <span class={item.disableToggle && 'toggle-disabled'}>
+                    {
+                      item.open
+                        ? <IconOpen class="mr-xs" onClick={() => toggle(item)} /> // 给节点绑定点击事件
+                        : <IconClose class="mr-xs" onClick={() => toggle(item)} /> // 给节点绑定点击事件
+                    }
+                  </span>
                   : <Indent />
               }
               <span class="zioui-tree-node__title">{item.label}</span>

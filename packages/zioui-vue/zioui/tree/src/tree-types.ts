@@ -5,6 +5,7 @@ export type TreeData = Array<TreeItem>
 export interface TreeItem {
   label: string
   children: TreeData
+  disableToggle: boolean
   [key: string]: any
 }
 
