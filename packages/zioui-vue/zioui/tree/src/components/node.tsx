@@ -11,7 +11,7 @@ const renderNode = (item: TreeItem, toggle: any) => (
           : <IconClose onClick={() => toggle(item)} />
         : <Indent />
     }
-    {item.label}
+    <span class={['zioui-tree-node__title']}>{item.label}</span>
   </div>
 )
 
