@@ -9,7 +9,7 @@ export default function useButton(props: ButtonProps): UseButtonReturnType {
     text: 'secondary',
   };
   const defaultColor = colorMap[props.variant];
-  console.log(props.loading)
+
   const classes = computed(() => ({
     'zioui-btn': true,
     [`zioui-btn-${props.variant}`]: true,
