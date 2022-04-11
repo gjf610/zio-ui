@@ -44,7 +44,9 @@ export default defineComponent({
             onClick={() => handleClickOnNode(nodeId)}>
             <div class="zioui-tree-node__content--value-wrapper">
               {renderIcon(item)}
-              <span class="zioui-tree-node__title">{label}</span>
+              <span class={['zioui-tree-node__title', item.disabled && 'select-disabled']}>
+                {label}
+              </span>
             </div>
           </div>
         </div>

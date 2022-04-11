@@ -6,6 +6,7 @@ export interface TreeItem {
   label: string
   children?: TreeData
   disableToggle?: boolean
+  disabled?: boolean
   [key: string]: any
 }
 

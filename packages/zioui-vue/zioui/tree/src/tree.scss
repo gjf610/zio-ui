@@ -63,6 +63,11 @@ $zioui-disabled-text: var(--zioui-disabled-text, #adb0b8);
         fill: $zioui-disabled-text;
       }
     }
+    .select-disabled {
+      color: $zioui-disabled-text !important;
+      cursor: not-allowed !important;
+      background-color: transparent !important;
+    }
   }
 
   .zioui-tree-node__title {
