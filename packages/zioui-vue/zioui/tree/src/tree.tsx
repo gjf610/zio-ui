@@ -3,6 +3,7 @@ import { treeProps, TreeProps, TreeItem } from './tree-types'
 import IconOpen from './components/icon-open'
 import IconClose from './components/icon-close'
 import useToggle from './composables/use-toggle'
+import useHighlightNode from './composables/use-highlight'
 import './tree.scss'
 
 export default defineComponent({
@@ -12,6 +13,7 @@ export default defineComponent({
   setup(props: TreeProps, ctx) {
     const { data } = toRefs(props)
     const { openedData, toggle } = useToggle(data.value)
+    const { nodeClassNameReflect, getNodeIdRef, handleClickOnNode } = useHighlightNode();
 
     // 增加缩进的展位元素
     const Indent = () => {
@@ -31,15 +33,18 @@ export default defineComponent({
     }
 
     const renderNode = (item: TreeItem) => {
+      const { key = "", label, disabled, open, level } = item
+      const nodeId = getNodeIdRef(disabled, key, label)
       return (
         <div
-          class={['zioui-tree-node', item.open && 'zioui-tree-node__open']}
-          style={{ paddingLeft: `${24 * (item.level - 1)}px` }}
+          class={['zioui-tree-node', open && 'zioui-tree-node__open']}
+          style={{ paddingLeft: `${24 * (level - 1)}px` }}
         >
-          <div class="zioui-tree-node__content">
+          <div class={['zioui-tree-node__content', `${nodeClassNameReflect.value[nodeId]}`]}
+            onClick={() => handleClickOnNode(nodeId)}>
             <div class="zioui-tree-node__content--value-wrapper">
               {renderIcon(item)}
-              <span class="zioui-tree-node__title">{item.label}</span>
+              <span class="zioui-tree-node__title">{label}</span>
             </div>
           </div>
         </div>
