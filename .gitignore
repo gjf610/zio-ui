@@ -10,5 +10,6 @@ yarn-error.log
 .history
 .vscode
 .idea
+packages/zioui-vue/docs/.vitepress/dist
 packages/zioui-vue/zioui/vue-zioui.ts
 .pnpm-debug.log
