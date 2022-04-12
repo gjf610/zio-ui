@@ -6,7 +6,34 @@
 :::demo 渲染一棵基本树
 ```vue
 <template>
-<z-tree :data="data"></z-tree>
+<z-tree :data="data">
+    <template #icon="item">
+      <svg
+        class="icon"
+        viewBox="0 0 1024 1024"
+        version="1.1"
+        xmlns="http://www.w3.org/2000/svg"
+        p-id="4160"
+        width="12"
+        height="12"
+        v-if="item.open"
+      >
+        <path d="M64 320l448 448 448-448z" fill="#8C92A4" p-id="4161"></path>
+      </svg>
+      <svg
+        class="icon"
+        viewBox="0 0 1024 1024"
+        version="1.1"
+        xmlns="http://www.w3.org/2000/svg"
+        p-id="4361"
+        width="12"
+        height="12"
+        v-else
+      >
+        <path d="M256 64l448 448-448 448z" fill="#8C92A4" p-id="4362"></path>
+      </svg>
+    </template>
+</z-tree>
 
 </template>
 

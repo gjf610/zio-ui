@@ -10,7 +10,7 @@ export default defineComponent({
   name: 'ZTree',
   props: treeProps,
   emits: [],
-  setup(props: TreeProps, ctx) {
+  setup(props: TreeProps, { slots }) {
     const { data } = toRefs(props)
     const { openedData, toggle } = useToggle(data.value)
     const { nodeClassNameReflect, getNodeIdRef, handleClickOnNode } = useHighlightNode();
@@ -22,11 +22,15 @@ export default defineComponent({
 
     const renderIcon = (item: TreeItem) => {
       return item.children
-        ? <span class={item.disableToggle && 'toggle-disabled'}>
+        ? <span class={item.disableToggle && 'toggle-disabled'}
+          onClick={() => toggle(item)}>
           {
-            item.open
-              ? <IconOpen class="mr-xs" onClick={() => toggle(item)} /> // 给节点绑定点击事件
-              : <IconClose class="mr-xs" onClick={() => toggle(item)} /> // 给节点绑定点击事件
+            // 增加插槽逻辑
+            slots.icon
+              ? slots.icon(item)
+              : item.open
+                ? <IconOpen class='mr-xs' />
+                : <IconClose class='mr-xs' />
           }
         </span>
         : <Indent />
