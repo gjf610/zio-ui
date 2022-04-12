@@ -11,7 +11,7 @@ export default defineComponent({
   props: treeProps,
   emits: [],
   setup(props: TreeProps, { slots }) {
-    const { data } = toRefs(props)
+    const { data, checkable } = toRefs(props)
     const { openedData, toggle } = useToggle(data.value)
     const { nodeClassNameReflect, getNodeIdRef, handleClickOnNode } = useHighlightNode();
 
@@ -25,7 +25,7 @@ export default defineComponent({
         ? <span class={item.disableToggle && 'toggle-disabled'}
           onClick={() => toggle(item)}>
           {
-            // 增加插槽逻辑
+            // 增加插槽逻辑checked
             slots.icon
               ? slots.icon(item)
               : item.open
@@ -47,7 +47,11 @@ export default defineComponent({
           <div class={['zioui-tree-node__content', `${nodeClassNameReflect.value[nodeId]}`]}
             onClick={() => handleClickOnNode(nodeId)}>
             <div class="zioui-tree-node__content--value-wrapper">
+              {/* 折叠图标 */}
               {renderIcon(item)}
+              {/* 复选框 */}
+              {checkable.value && <input type="checkbox" v-model={item.checked} />}
+              {/* 文本 */}
               <span class={['zioui-tree-node__title', item.disabled && 'select-disabled']}>
                 {label}
               </span>

@@ -7,6 +7,7 @@ export interface TreeItem {
   children?: TreeData
   disableToggle?: boolean
   disabled?: boolean
+  checked?: boolean
   [key: string]: any
 }
 
@@ -14,6 +15,10 @@ export const treeProps = {
   data: {
     type: Array as PropType<TreeData>,
     default: () => []
+  },
+  checkable: {
+    type: Boolean,
+    default: false
   }
 } as const
 

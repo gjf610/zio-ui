@@ -6,7 +6,7 @@
 :::demo 渲染一棵基本树
 ```vue
 <template>
-<z-tree :data="data">
+<z-tree :data="data" checkable>
     <template #icon="item">
       <svg
         class="icon"
