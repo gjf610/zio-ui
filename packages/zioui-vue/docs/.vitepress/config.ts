@@ -24,6 +24,7 @@ const nav = [
   { text: 'github', link: 'https://github.com/gjf610/zio-ui' }
 ]
 const config = {
+  base: '/zioui-website/',
   title: 'ZIO UI',
   themeConfig: {
     sidebar,
