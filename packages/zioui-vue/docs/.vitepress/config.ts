@@ -2,7 +2,7 @@ import { demoBlockPlugin } from 'vitepress-theme-demoblock'
 
 const sidebar = {
   '/': [
-    { text: '快速开始', link: '/' },
+    { text: '快速开始', link: '/quick-start/' },
     {
       text: '通用', children: [
         { text: 'Button 按钮', link: '/component/button/' },
@@ -19,10 +19,15 @@ const sidebar = {
     { text: '布局', },
   ]
 }
-
+const nav = [
+  { text: '组件', link: '/quick-start/' },
+  { text: 'github', link: 'https://github.com/gjf610/zio-ui' }
+]
 const config = {
+  title: 'ZIO UI',
   themeConfig: {
-    sidebar
+    sidebar,
+    nav
   },
   markdown: {
     config: (md) => {

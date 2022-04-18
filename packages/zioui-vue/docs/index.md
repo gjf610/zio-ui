@@ -1,47 +1,19 @@
-<h1 align="center">ZIO UI</h1>
+---
+home: true
+heroImage: /assets/zio.svg
+heroText: ZIO UI
+tagline: zio UI 是一款基于 Vue 3.2 和 TypeScript 的 UI 组件库。
+actionText: 快速开始
+actionLink: /quick-start/
+altActionText: Github
+altActionLink: https://github.com/gjf610/zio-ui
+features:
+  - title: 基于 TypeScript
+    details: 源代码采用 TypeScript 书写
+  - title: 高扩展性
+    details: 使用TSX语法编写组件
+  - title: 简洁至上
+    details: 所有组件支持全量引入和按需引入
 
-<p align="center">一个 Vue3.2 的组件库。</p>
-
-🌈 特性：
-
-- 🔥 眼下最时髦的 Vue3.2
-- ⚡ 高效、快速的 Vite
-- 🔑 支持 TypeScript + TSC
-- ✨ 支持按需引入
-- 🎨 scss
-
-## 🔧 如何使用
-
-### 1. 安装
-
-```
-npm i zioui
-```
-
-### 2. 引入
-
-在`main.ts`文件中引入`zioui`。
-
-```ts
-import { createApp } from 'vue'
-import App from './App.vue'
-// 引入 ZioUI 组件库及样式
-import ZioUI from 'zioui'
-import 'zioui/style.css'
-createApp(App).use(ZioUI).mount('#app')
-```
-
-### 3. 使用
-
-在`App.vue`文件中使用 zio ui 组件。
-
-```vue
-<script setup lang="ts">
-import { Button } from 'zioui';
-</script>
-<template>
-  <Button variant="solid">确定</Button>
-</template>
-```
-
-打开浏览器访问：[http://localhost:3000/](http://localhost:3000/)
+footer: MIT Licensed | Copyright © 2022 Jianfeng GUO
+---
