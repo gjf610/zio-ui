@@ -8,7 +8,7 @@
 - ⚡ 高效、快速的 Vite
 - 🔑 支持 TypeScript + TSC
 - ✨ 支持按需引入
-- 🎨 sass
+- 🎨 scss
 
 ## 🔧 如何使用
 
